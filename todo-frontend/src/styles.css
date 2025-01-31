@@ -1,0 +1,13 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.todo-item {
+  margin-bottom: 10px;
+}
+.todo-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.todo-description {
+  color: #555;
+  font-size: 0.9em;
+}

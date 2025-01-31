@@ -1,0 +1,10 @@
+<ul class="list-group" id="listaTareas">
+  <!-- Ejemplo de una tarea -->
+  <app-todo-item
+    data-id="{{ todo.id }}"
+    *ngFor="let todo of todos$ | async"
+    [todo]="todo"
+    [id]="todo.id"
+  >
+  </app-todo-item>
+</ul>

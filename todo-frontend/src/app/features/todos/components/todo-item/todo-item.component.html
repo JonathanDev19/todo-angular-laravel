@@ -1,0 +1,10 @@
+<li class="list-group-item todo-item">
+  <div class="todo-title">{{ todo.title }}</div>
+  <div class="todo-description">{{ todo.description }}</div>
+  <div class="mt-2">
+    <button class="btn btn-sm btn-warning me-2">Editar</button>
+    <button (click)="deleteTodo()" class="btn btn-sm btn-danger">
+      Eliminar
+    </button>
+  </div>
+</li>

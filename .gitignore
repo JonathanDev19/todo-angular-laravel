@@ -1,0 +1,29 @@
+# Ignorar dependencias de Node.js (Angular)
+node_modules/
+dist/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignorar archivos de configuración de Angular
+.angular/
+
+# Ignorar dependencias de PHP (Laravel)
+vendor/
+composer.lock
+
+# Ignorar archivos de entorno
+.env
+.env.example
+
+# Ignorar caché y logs de Laravel
+storage/
+bootstrap/cache/
+*.log
+
+# Ignorar configuraciones de editores de código
+.vscode/
+.idea/
+
+# Ignorar archivos de sistema de Mac
+.DS_Store

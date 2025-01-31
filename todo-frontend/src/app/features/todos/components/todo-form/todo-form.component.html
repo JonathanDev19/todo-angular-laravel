@@ -1,0 +1,28 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Agregar nueva tarea</h5>
+    <div class="mb-3">
+      <label for="tituloTarea" class="form-label">Título</label>
+      <input
+        [(ngModel)]="inputValue"
+        type="text"
+        class="form-control"
+        id="tituloTarea"
+        placeholder="Título de la tarea"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="descripcionTarea" class="form-label">Descripción</label>
+      <textarea
+        [(ngModel)]="textAreaValue"
+        class="form-control"
+        id="descripcionTarea"
+        rows="2"
+        placeholder="Descripción de la tarea"
+      ></textarea>
+    </div>
+    <button (click)="createTodo()" class="btn btn-primary" id="agregarTarea">
+      Agregar Tarea
+    </button>
+  </div>
+</div>
