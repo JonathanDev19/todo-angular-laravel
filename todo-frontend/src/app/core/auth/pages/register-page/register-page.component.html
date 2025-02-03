@@ -1,0 +1,115 @@
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Registrate</h3>
+        <form
+          (ngSubmit)="onSubmit(registerForm)"
+          novalidate
+          #registerForm="ngForm"
+        >
+          <!-- Campo de nombre -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Nombre"
+              ngModel
+              required
+              minlength="3"
+            />
+            <div
+              *ngIf="
+                registerForm.controls['name']?.invalid &&
+                registerForm.controls['name']?.touched
+              "
+            >
+              <small
+                *ngIf="registerForm.controls['name'].errors?.['required']"
+                class="text-danger"
+                >El nombre es obligatorio.</small
+              >
+            </div>
+          </div>
+
+          <!-- Campo de correo electrónico -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              id="email"
+              ngModel
+              #emailCtrl="ngModel"
+              placeholder="Ingresa tu correo"
+              required
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              (blur)="checkEmail(registerForm.value.email)"
+            />
+            <!-- Validación de campo requerido -->
+            <div
+              *ngIf="emailCtrl.invalid && emailCtrl.touched"
+              class="text-danger"
+            >
+              <small *ngIf="emailCtrl.errors?.['required']">
+                El correo es obligatorio.
+              </small>
+
+              <!-- Validación de formato de correo -->
+              <small *ngIf="emailCtrl.errors?.['pattern']">
+                El formato del correo es inválido.
+              </small>
+            </div>
+
+            <!-- Validación si el correo ya existe -->
+            <div *ngIf="emailExists" class="text-danger">
+              <small>Este correo ya está registrado</small>
+            </div>
+          </div>
+
+          <!-- Campo de contraseña -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="password"
+              ngModel
+              minlength="8"
+              placeholder="Ingresa tu contraseña"
+              required
+            />
+            <div
+              *ngIf="
+                registerForm.controls['password']?.invalid &&
+                registerForm.controls['password']?.touched
+              "
+            >
+              <small
+                *ngIf="registerForm.controls['password'].errors?.['required']"
+                class="text-danger"
+                >La contraseña es obligatoria.</small
+              >
+            </div>
+          </div>
+
+          <!-- Botón de inicio de sesión -->
+          <div class="d-grid mb-3">
+            <button
+              [disabled]="registerForm.invalid"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

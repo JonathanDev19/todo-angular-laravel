@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoShellComponent } from './todo-shell.component';
+import { LoginPageComponent } from './login-page.component';
 
-describe('TodoShellComponent', () => {
-  let component: TodoShellComponent;
-  let fixture: ComponentFixture<TodoShellComponent>;
+describe('LoginPageComponent', () => {
+  let component: LoginPageComponent;
+  let fixture: ComponentFixture<LoginPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoShellComponent]
+      declarations: [LoginPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TodoShellComponent);
+    fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
